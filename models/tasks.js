@@ -33,7 +33,7 @@ class Tasks {
     showFullTasks() {
         Object.keys(this._list).forEach( (key, i) => {
             const numberTask = `${i + 1}`.green;
-            console.log(`${numberTask.green} ${this._list[key].description} :: ${this._list[key].doneDate ? 'Completa'.green : 'Pendiente'.red}`)
+            console.log(`${numberTask.green} ${this._list[key].description} :: ${this._list[key].doneDate ? 'Complete'.green : 'Pending'.red}`)
         });
     }
 
@@ -43,7 +43,7 @@ class Tasks {
             // !xor -> ( true true ) => true
             // !xor -> ( false false ) => true
             if( !((done || this._list[key].doneDate) && !(done && this._list[key].doneDate)) ) {
-                console.log(`${numberTask.green} ${this._list[key].description} :: ${this._list[key].doneDate ? 'Completa'.green : 'Pendiente'.red}`)
+                console.log(`${numberTask.green} ${this._list[key].description} :: ${this._list[key].doneDate ? 'Complete'.green : 'Pending'.red}`)
             }
         });
     }
